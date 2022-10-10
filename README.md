@@ -10,4 +10,3 @@ I'am trying to learn node js. While I am learning nodejs I will try to use Mysql
  - GrapQL
  - TypeScript
  - Deno
- - test
