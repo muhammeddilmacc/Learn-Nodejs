@@ -1,6 +1,5 @@
 const Product = require('../models/product');
 
-
 exports.getProducts = (req, res, next) => {
   Product.find()
     .then(products => {
@@ -18,7 +17,7 @@ exports.getProducts = (req, res, next) => {
 
 exports.getProduct = (req, res, next) => {
   const prodId = req.params.productId;
-  Product.findById(prodId)// findById is a mongoose method not belongs to the model!!!
+  Product.findById(prodId)
     .then(product => {
       res.render('shop/product-detail', {
         product: product,
@@ -46,8 +45,9 @@ exports.getIndex = (req, res, next) => {
 exports.getCart = (req, res, next) => {
   req.user
     .populate('cart.items.productId')
+    .execPopulate()
     .then(user => {
-      products = user.cart.items;
+      const products = user.cart.items;
       res.render('shop/cart', {
         path: '/cart',
         pageTitle: 'Your Cart',

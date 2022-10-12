@@ -2,8 +2,8 @@ const path = require('path');
 
 const express = require('express');
 const bodyParser = require('body-parser');
-
 const mongoose = require('mongoose');
+
 const errorController = require('./controllers/error');
 const User = require('./models/user');
 
@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use((req, res, next) => {
-  User.findById('6346e1849028ec09d1afcac7')
+  User.findById('6346f478844b6b4094389236')
     .then(user => {
       req.user = user;
       next();
@@ -47,8 +47,8 @@ mongoose.connect('mongodb+srv://muhammeddilmacc:muhammed123@cluster0.2wjtvvo.mon
         user.save();
       }// end of if block
     })
-
     app.listen(3000);
-  }).catch(err => {
+  })
+  .catch(err => {
     console.log(err);
   });
