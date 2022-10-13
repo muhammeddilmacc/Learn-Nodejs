@@ -31,7 +31,6 @@ app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 
 app.use(errorController.get404);
-
 mongoose.connect('mongodb+srv://muhammeddilmacc:muhammed123@cluster0.2wjtvvo.mongodb.net/Shop?retryWrites=true&w=majority')
   .then(result => {
 
