@@ -6,20 +6,19 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
 const csrf = require('csurf');
+const flash = require('connect-flash');
 
 const errorController = require('./controllers/error');
 const User = require('./models/user');
 
 const MONGODB_URI =
-  'mongodb+srv://muhammeddilmacc:muhammed123@cluster0.2wjtvvo.mongodb.net/Shop'
-  ;
+  'mongodb+srv://muhammeddilmacc:muhammed123@cluster0.2wjtvvo.mongodb.net/Shop';
 
 const app = express();
 const store = new MongoDBStore({
   uri: MONGODB_URI,
   collection: 'sessions'
 });
-
 const csrfProtection = csrf();
 
 app.set('view engine', 'ejs');
@@ -39,8 +38,8 @@ app.use(
     store: store
   })
 );
-
-app.use(csrfProtection);//csrf token oluşturmak için kullanılır.
+app.use(csrfProtection);
+app.use(flash());
 
 app.use((req, res, next) => {
   if (!req.session.user) {
@@ -54,12 +53,11 @@ app.use((req, res, next) => {
     .catch(err => console.log(err));
 });
 
-
 app.use((req, res, next) => {
   res.locals.isAuthenticated = req.session.isLoggedIn;
   res.locals.csrfToken = req.csrfToken();
-  next(); 
-})
+  next();
+});
 
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
