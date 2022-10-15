@@ -1,6 +1,9 @@
 const Product = require('../models/product');
 
 exports.getAddProduct = (req, res, next) => {
+  if(!req.session.isLoggedIn){
+    return res.redirect('/login');
+  }// burada session kontrolü yapıyoruz. eğer kullanıcuı giriş yapmadan bu sayfaya ulaşmaya çalışırsa login sayfasına yönlendiriyoruz.
   res.render('admin/edit-product', {
     pageTitle: 'Add Product',
     path: '/admin/add-product',
@@ -34,10 +37,12 @@ exports.postAddProduct = (req, res, next) => {
 };
 
 exports.getEditProduct = (req, res, next) => {
+
   const editMode = req.query.edit;
   if (!editMode) {
     return res.redirect('/');
-  }
+  }  
+
   const prodId = req.params.productId;
   Product.findById(prodId)
     .then(product => {
@@ -78,6 +83,12 @@ exports.postEditProduct = (req, res, next) => {
 };
 
 exports.getProducts = (req, res, next) => {
+
+    
+  if(!req.session.isLoggedIn){
+    return res.redirect('/login');
+  }
+
   Product.find()
     // .select('title price -_id')
     // .populate('userId', 'name')
