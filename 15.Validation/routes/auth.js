@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.get('/login', authController.getLogin);
 
-router.get('/signup', authController.getSignup);
+router.get('/signup2', authController.getSignup);
 
 router.post('/login', [
     body('email')
@@ -17,7 +17,7 @@ router.post('/login', [
         .isLength({ min: 8 })
 ], authController.postLogin);
 
-router.post('/signup',
+router.post('/signup2',
     [check('email')
         .isEmail()
         .withMessage('Please enter a valid email')

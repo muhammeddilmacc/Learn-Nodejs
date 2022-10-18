@@ -40,8 +40,8 @@ exports.getSignup = (req, res, next) => {
     message = null;
   }
 
-  res.render('auth/signup', {
-    path: '/signup',
+  res.render('auth/signup2', {
+    path: '/signup2',
     pageTitle: 'Signup',
     errorMessage: message,
     oldInputs: { email: "", password: "", confirmPassword: "" },
@@ -98,8 +98,8 @@ exports.postSignup = (req, res, next) => {
 
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    return res.status(422).render('auth/signup', {
-      path: '/signup',
+    return res.status(422).render('auth/signup2', {
+      path: '/signup2',
       pageTitle: 'SignUp',
       errorMessage: errors.array()[0].msg,
       oldInputs: { email: email, password: password, confirmPassword: confirmPassword },

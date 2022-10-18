@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;800&family=Roboto:wght@400;500;700&family=Noto+Sans:wght@400;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 400;
+    background: #f0f0f0;
+    color: #333333;
+}
+
+.wrapper {
+    max-width: 520px;
+    padding: 20px 25px;
+    margin: 0.3rem auto;
+    background: #fff;
+    border-radius: 10px;
+    height: 540px;
+    -webkit-box-shadow: 0px 0px 45px -12px rgba(0, 0, 0, 0.32);
+    -moz-box-shadow: 0px 0px 45px -12px rgba(0, 0, 0, 0.32);
+    box-shadow: 0px 0px 45px -12px rgba(0, 0, 0, 0.32);
+}
+
+.wrapper:hover {
+    -webkit-box-shadow: 0px 0px 45px -12px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0px 0px 45px -12px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 0px 45px -12px rgba(0, 0, 0, 0.4);
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.form-container .header-text {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    margin-bottom: 15px;
+}
+
+.form-container .google-button {
+    margin-bottom: 25px;
+}
+
+.form-container .google-button .button {
+    width: 337px;
+    height: 55px;
+    font-family: "Noto Sans", sans-serif;
+    background-color: #5b86e6;
+    -webkit-box-shadow: 0px 0px 45px -12px rgba(0, 0, 0, 0.50);
+    -moz-box-shadow: 0px 0px 45px -12px rgba(0, 0, 0, 0.50);
+    box-shadow: 0px 0px 45px -12px rgba(0, 0, 0, 0.50);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: auto 60px auto 100px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+    line-height: 22px;
+    position: relative;
+    outline-style: none;
+    transition: background 300ms ease-in-out;
+}
+
+.form-container .google-button .button::before {
+    content: "";
+    background: #ffffff url("https://upload-icon.s3.us-east-2.amazonaws.com/uploads/icons/png/2659939281579738432-32.png") no-repeat center;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 12px;
+    top: 7px;
+    display: inline-block;
+    margin-right: 40px;
+}
+
+.form-container .google-button .button:hover {
+    background: #7aa0f3;
+}
+
+.form-container .form-text {
+    text-transform: uppercase;
+    color: #949495;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-container .form-text::before {
+    content: "";
+    width: 55px;
+    height: 1px;
+    background: #949495;
+    position: absolute;
+    left: -80px;
+    top: 50%;
+}
+
+.form-container .form-text::after {
+    content: "";
+    width: 55px;
+    height: 1px;
+    background: #949495;
+    position: absolute;
+    right: -80px;
+    top: 50%;
+}
+
+.form-container .form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container .form .label {
+    text-align: left;
+    margin-bottom: 5px;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 550;
+}
+
+/* ////////////////////////////////////////////////// */
+
+
+.form-container .form input[type=email] {
+    width: 337px;
+    height: 40px;
+    margin-bottom: 20px;
+    outline: none;
+    line-height: 20px;
+    font-size: 16px;
+    padding: 20px 12px;
+    border: 1px solid #d9dced;
+    border-radius: 5px;
+    font-family: "Mulish", sans-serif;
+}
+
+.form-container .form input[type=password] {
+    width: 337px;
+    height: 36px;
+    margin-bottom: 20px;
+    outline: none;
+    line-height: 20px;
+    font-size: 16px;
+    padding: 18px 12px;
+    border: 1px solid #d9dced;
+    border-radius: 5px;
+    font-family: "Mulish", sans-serif;
+}
+
+.form-container .form input[type=email]:focus {
+    border: 1px solid #1f1c44;
+}
+
+.form-container .form input[type=password]:focus {
+    border: 1px solid #1f1c44;
+}
+
+.form-container .form input[type=submit] {
+    width: 337px;
+    padding: 9px 0;
+    margin-bottom: 20px;
+    font-family: "Noto Sans", sans-serif;
+    outline-style: none;
+    border: none;
+    background: #09bb36;
+    -webkit-box-shadow: 0px 0px 45px -12px rgba(0, 0, 0, 0.40);
+    -moz-box-shadow: 0px 0px 45px -12px rgba(0, 0, 0, 0.40);
+    box-shadow: 0px 0px 45px -12px rgba(0, 0, 0, 0.40);
+    border-radius: 5px;
+    font-size: 18px;
+    /* line-height: 1px; */
+    color: #ffffff;
+    cursor: pointer;
+    transition: background 300ms ease-in-out;
+}
+
+.form-container .form input[type=submit]:hover {
+    background: rgba(7, 177, 35, 0.8);
+    -webkit-box-shadow: 0px 0px 45px -12px rgba(0, 0, 0, 0.45);
+    -moz-box-shadow: 0px 0px 45px -12px rgba(0, 0, 0, 0.45);
+    box-shadow: 0px 0px 45px -12px rgba(0, 0, 0, 0.45);
+}
+
+.form-container .have-account {
+    font-size: 15px;
+
+}
+
+.form-container a {
+    text-decoration: none;
+    color: #5b86e6;
+}
+
+.form-container a:hover {
+    text-decoration: none;
+    color: #2659c7;
+}
+
+.form-container input.invalid {
+    border: 1px solid red;
+}
+
+.form-container label.invalid-text::after {
+    content: " *";
+    color: red;
+}
